@@ -3,6 +3,8 @@ import { useRouter } from "next/navigation";
 import LockOutlinedIcon from "@mui/icons-material/lockOutlined";
 import { Avatar, Button, TextField, Typography, useTheme } from "@mui/material";
 import { Box, Container } from "@mui/system";
+import { styled } from "@mui/material/styles";
+import Link from "next/link";
 
 declare module "@mui/material/Button" {
   interface ButtonPropsColorOverrides {
@@ -29,7 +31,7 @@ function SignIn() {
           alignItems: "center",
         }}
       >
-        <Avatar sx={{ backgroundColor: theme.palette.secondary.main }}>
+        <Avatar sx={{ backgroundColor: theme.palette.primary.main }}>
           <LockOutlinedIcon />
         </Avatar>
 
@@ -62,12 +64,12 @@ function SignIn() {
           ></TextField>
 
           <Button
-            variant="contained"
             type="submit"
+            variant="contained"
+            color="primary"
             fullWidth
             sx={{
               margin: theme.spacing(2, 0, 2),
-              backgroundColor: "primary.light",
             }}
           >
             Log In
