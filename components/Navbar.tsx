@@ -17,33 +17,16 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 
-const Navbar = () => {
-  const theme = useTheme();
-  const Search = styled("div")(({ theme }) => ({
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(3),
-      width: "auto",
-    },
-  }));
+const StyledButton = styled("button")(({ theme }) => ({
+  color: theme.palette.secondary.contrastText,
+  backgroundColor: theme.palette.secondary.main,
+  padding: theme.spacing(1),
+  borderRadius: theme.shape.borderRadius,
+  border: 0,
+}));
 
-  const SearchIconWrapper = styled("div")(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  }));
+const Navbar: React.FC = () => {
+  const theme = useTheme();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -107,15 +90,16 @@ const Navbar = () => {
             </IconButton>
           </Box>
           <Button
-            href="/login"
             variant="contained"
+            color="error"
+            href="/login"
             sx={{
               margin: theme.spacing(0, 2, 0),
-              bgcolor: theme.palette.custom.contrastText,
             }}
           >
             Login
           </Button>
+          <StyledButton>SignUp</StyledButton>
         </Toolbar>
       </AppBar>
     </Box>
