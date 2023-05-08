@@ -5,6 +5,9 @@ import { Montserrat } from "next/font/google";
 import { Button, useTheme, Typography, CssBaseline, Box } from "@mui/material";
 
 import Navbar from "@/components/Navbar";
+import InputField from "@/components/InputField";
+import { MyComponent } from "@/components/Styles";
+import styled from "@emotion/styled";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -21,6 +24,7 @@ const Home = () => {
       <main>
         <CssBaseline />
         <Navbar />
+        <InputField />
         <Button
           variant="contained"
           sx={{
@@ -40,47 +44,14 @@ const Home = () => {
         >
           Secondary Button
         </Button>
-        <Button
-          variant="contained"
-          sx={{
-            margin: theme.spacing(4),
-            backgroundColor: theme.palette.custom.main,
-          }}
-        >
-          Custom Button
-        </Button>
-        <Typography
-          variant="h1Bold"
-          component={"h1"}
-          sx={{ fontFamily: theme.typography.fontFamily }}
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Exercitationem, nesciunt. Modi, officiis placeat porro et enim
-          deserunt quidem assumenda nulla consequuntur voluptatem nam temporibus
-          voluptatum maiores, cumque consectetur ipsum dolorum.
-        </Typography>
-        <Typography variant="h3" component="h5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-          recusandae, repellat animi voluptas aliquam quibusdam, tempore quas ab
-          voluptatibus atque dolore perferendis blanditiis facere. Voluptatem
-          sapiente magnam sunt ex eveniet.
-        </Typography>
-
-        <Typography sx={{ fontFamily: "montserrat" }}>lorem5</Typography>
-        <Box sx={{ color: "secondary.main" }}>Sessions</Box>
-        <Box
-          sx={{
-            color: "primary.main",
-            fontSize: 20,
-            fontWeight: "medium",
-            fontFamily: "montserrat",
-          }}
-        >
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius fugiat
-          ipsa esse obcaecati sequi molestiae in velit illum mollitia tempore
-          iure odit sed ratione perferendis, quaerat molestias voluptate
-          accusantium magni?
-        </Box>
+        <MyComponent>
+          <Typography variant="h3">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
+            explicabo hic voluptate labore, dolorum beatae perferendis quaerat
+            eveniet, repellat nam reprehenderit? Amet voluptate rem esse
+            quibusdam quisquam illo dolorem enim?
+          </Typography>
+        </MyComponent>
       </main>
     </>
   );
