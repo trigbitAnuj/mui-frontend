@@ -6,12 +6,13 @@ import { Button, useTheme, Typography, CssBaseline, Box } from "@mui/material";
 
 import Navbar from "@/components/Navbar";
 import InputField from "@/components/InputField";
-import { MyComponent } from "@/components/Styles";
+
 import styled from "@emotion/styled";
+import { NextPage } from "next";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-const Home = () => {
+const Home: NextPage = () => {
   const theme = useTheme();
   return (
     <>
@@ -25,7 +26,7 @@ const Home = () => {
         <CssBaseline />
         <Navbar />
         <InputField />
-        <Button
+        {/* <Button
           variant="contained"
           sx={{
             margin: theme.spacing(4),
@@ -33,25 +34,28 @@ const Home = () => {
           }}
         >
           Primary Button
-        </Button>
-        <Button
+        </Button> */}
+        {/* <Button
           className={montserrat.className}
-          variant="contained"
           sx={{
             margin: theme.spacing(4),
+            color: theme.palette.secondary.contrastText,
             bgcolor: theme.palette.secondary.main,
+            ":hover": {
+              color: theme.palette.secondary.contrastText,
+              bgcolor: theme.palette.secondary.dark,
+            },
           }}
         >
           Secondary Button
-        </Button>
-        <MyComponent>
-          <Typography variant="h3">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
-            explicabo hic voluptate labore, dolorum beatae perferendis quaerat
-            eveniet, repellat nam reprehenderit? Amet voluptate rem esse
-            quibusdam quisquam illo dolorem enim?
-          </Typography>
-        </MyComponent>
+        </Button> */}
+
+        {/* <Typography variant="h3">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
+          explicabo hic voluptate labore, dolorum beatae perferendis quaerat
+          eveniet, repellat nam reprehenderit? Amet voluptate rem esse quibusdam
+          quisquam illo dolorem enim?
+        </Typography> */}
       </main>
     </>
   );
