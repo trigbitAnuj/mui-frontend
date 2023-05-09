@@ -9,24 +9,75 @@ import {
   Button,
   Badge,
   useTheme,
+  Avatar,
 } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import AccountCircle from "@mui/icons-material/AccountCircle";
+
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import { green } from "@mui/material/colors";
+import { useRouter } from "next/navigation";
 
 const StyledButton = styled("button")(({ theme }) => ({
   color: theme.palette.secondary.contrastText,
   backgroundColor: theme.palette.secondary.main,
-  padding: theme.spacing(1),
+  padding: theme.spacing(1, 1),
   borderRadius: theme.shape.borderRadius,
   border: 0,
+  cursor: "pointer",
+  textTransform: "uppercase",
+  minWdth: 64,
+  fontWeight: 500,
 }));
+
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  "&:hover": {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginRight: theme.spacing(2),
+  marginLeft: 0,
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
+    width: "auto",
+  },
+}));
+
+const SearchIconWrapper = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
+// const StyledInputBase = styled(InputBase)(({ theme }) => ({
+//   color: 'inherit',
+//   '& .MuiInputBase-input': {
+//     padding: theme.spacing(1, 1, 1, 0),
+//     // vertical padding + font size from searchIcon
+//     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+//     transition: theme.transitions.create('width'),
+//     width: '100%',
+//     [theme.breakpoints.up('md')]: {
+//       width: '20ch',
+//     },
+//   },
+// }));
 
 const Navbar: React.FC = () => {
   const theme = useTheme();
+  const router = useRouter();
+
+  const handleSignup = () => {
+    router.push("/register");
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -69,7 +120,7 @@ const Navbar: React.FC = () => {
                 <MailIcon />
               </Badge>
             </IconButton>
-            <IconButton
+            {/* <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
@@ -77,7 +128,7 @@ const Navbar: React.FC = () => {
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>
-            </IconButton>
+            </IconButton> */}
             <IconButton
               size="large"
               edge="end"
@@ -86,7 +137,12 @@ const Navbar: React.FC = () => {
               //   onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <Avatar
+                alt="Anuj Kumar"
+                sx={{ width: 40, height: 40, bgcolor: green[500] }}
+              >
+                A
+              </Avatar>
             </IconButton>
           </Box>
           <Button
@@ -99,7 +155,7 @@ const Navbar: React.FC = () => {
           >
             Login
           </Button>
-          <StyledButton>SignUp</StyledButton>
+          <StyledButton onClick={handleSignup}>SignUp</StyledButton>
         </Toolbar>
       </AppBar>
     </Box>
