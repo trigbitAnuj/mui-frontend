@@ -1,20 +1,20 @@
-import SignIn from '@/components/SignIn'
-import Head from 'next/head'
-import React from 'react'
+import SignIn from "@/components/SignIn";
+import { NextPage } from "next";
+import Head from "next/head";
+import React from "react";
 
-const login = () => {
+const login: NextPage = () => {
   return (
     <>
-    <Head>
-    <title>Login</title>
+      <Head>
+        <title>Login</title>
         <meta name="description" content="MUI expamle " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <SignIn/>
+      </Head>
+      <SignIn />
     </>
-   
-  )
-}
+  );
+};
 
-export default login
+export default login;
