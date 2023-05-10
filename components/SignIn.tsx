@@ -12,14 +12,14 @@ declare module "@mui/material/Button" {
   }
 }
 
-function SignIn() {
+const SignIn: React.FC = () => {
   const theme = useTheme();
   const router = useRouter();
 
-  async function handleLogin(e: React.FormEvent<HTMLFormElement>) {
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push("/");
-  }
+  };
 
   return (
     <Container maxWidth="xs">
@@ -78,6 +78,6 @@ function SignIn() {
       </Box>
     </Container>
   );
-}
+};
 
 export default SignIn;
