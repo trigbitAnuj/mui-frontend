@@ -12,4 +12,25 @@ export interface StyleContainerType {
  export interface StyledButtonType {
     myBackgroundColor: string;
   }
+
+  export type TIERS={
+    title: string
+    price: string
+    subheader?:string
+    description:string []
+    buttonText: string
+    buttonVariant: string
+}
+
+export interface TIERSTYPE extends Array<TIERS>{}
+
+
+export type PRODUCT = {
+  name: string;
+  desc: string;
+  price: string;
+};
+
+export interface ProductsType extends Array<PRODUCT> {}
+
   
