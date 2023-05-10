@@ -1,15 +1,14 @@
-import React,  from "react";
+import React from "react";
 import {
   Box,
   Button,
   Container,
   TextField,
   Typography,
-  
   useTheme,
 } from "@mui/material";
 
-const InputField:React.FC = () => {
+const InputField: React.FC = () => {
   const theme = useTheme();
   const [text, setText] = React.useState<string>("");
 
@@ -20,18 +19,16 @@ const InputField:React.FC = () => {
 
   const handleUpperCase = () => {
     const newText = text?.toUpperCase();
-  
+
     setText(newText);
   };
 
   const handleLowerCase = () => {
     const newText = text?.toLowerCase();
- 
     setText(newText);
   };
 
   const handleExtraSpaces = () => {
-    
     const newText = text.split(/[ ]+/).join(" ");
     setText(newText);
   };
