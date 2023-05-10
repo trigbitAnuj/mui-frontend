@@ -57,10 +57,10 @@ export const StyledButtonSignUp = styled(Button)(({ theme }) => ({
     },
   })(({placeHolderColor,borderColor,theme}:StyledTextFieldType) => ({
     input: {
-      color: theme.palette.success.main,
+      color: placeHolderColor,
       "&::placeholder": {
         fontStyle: "oblique",
-        color:placeHolderColor
+        
       },
     },
     "& .MuiOutlinedInput-root": {
@@ -116,5 +116,13 @@ export const StyledButtonSignUp = styled(Button)(({ theme }) => ({
   
  export  const MyStyledButton = styled("button")((props: StyledButtonType) => ({
     backgroundColor: props.myBackgroundColor,
+  }));
+
+  export const MyThemeComponent = styled("div")(({ theme }) => ({
+    color: theme.palette.primary.contrastText,
+    backgroundColor: theme.palette.custom.main,
+    padding: theme.spacing(1),
+    margin: theme.spacing(1),
+    borderRadius: theme.shape.borderRadius,
   }));
   
