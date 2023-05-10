@@ -47,7 +47,7 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      light:"#d1c4e9",
+      light: "#d1c4e9",
       main: "#673ab7",
       dark: "#9575cd",
       contrastText: "#fff",
@@ -75,12 +75,18 @@ export const theme = createTheme({
       marginTop: "20px",
       marginBottom: "10px",
     },
-    h1: { fontFamily: ["montserrat"].join(",") },
-    h2: { fontFamily: ["montserrat"].join(",") },
-    h3: { fontFamily: ["montserrat"].join(",") },
-    h4: { fontFamily: ["montserrat"].join(",") },
-    h5: { fontFamily: ["montserrat"].join(",") },
-    h6: { fontFamily: ["montserrat"].join(",") },
+    // h1: {
+    //   fontFamily: ["montserrat"].join(","),
+    //   fontWeight: 500,
+    //   fontSize: "2rem",
+    //   lineHeight: 0.456,
+    //   letterSpacing: "-0.015em",
+    // },
+    // h2: { fontFamily: ["montserrat"].join(",") },
+    // h3: { fontFamily: ["montserrat"].join(",") },
+    // h4: { fontFamily: ["montserrat"].join(",") },
+    // h5: { fontFamily: ["montserrat"].join(",") },
+    // h6: { fontFamily: ["montserrat"].join(",") },
   },
   components: {
     MuiTypography: {

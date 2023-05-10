@@ -12,26 +12,17 @@ import {
 } from "@mui/material";
 
 import { styled } from "@mui/material/styles";
+import { NextPage } from "next";
+import { StyledButtonSignUp } from "@/components/styledComponent";
 
-const StyledButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
-  backgroundColor: theme.palette.success.main,
-  padding: theme.spacing(1),
-  margin: theme.spacing(1),
-
-  "&: hover": {
-    backgroundColor: theme.palette.success.light,
-  },
-}));
-
-function SignUp() {
+const SignUp: NextPage = () => {
   const theme = useTheme();
   const router = useRouter();
 
-  async function handleSignup(e: React.FormEvent<HTMLFormElement>) {
+  const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push("/login");
-  }
+  };
 
   return (
     <Container maxWidth="xs">
@@ -87,7 +78,7 @@ function SignUp() {
             required
           ></TextField>
 
-          <StyledButton
+          <StyledButtonSignUp
             type="submit"
             fullWidth
             sx={{
@@ -95,11 +86,11 @@ function SignUp() {
             }}
           >
             SignUp
-          </StyledButton>
+          </StyledButtonSignUp>
         </form>
       </Box>
     </Container>
   );
-}
+};
 
 export default SignUp;

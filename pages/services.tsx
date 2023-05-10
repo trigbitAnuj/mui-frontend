@@ -13,8 +13,9 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
 import { StyleBox } from "@/components/styledComponent";
+import { NextPage } from "next";
 
-const Services: React.FC = () => {
+const Services: NextPage = () => {
   const services = [
     { id: 1, text: "Service1" },
     { id: 2, text: "Service2" },
