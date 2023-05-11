@@ -33,4 +33,11 @@ export type PRODUCT = {
 
 export interface ProductsType extends Array<PRODUCT> {}
 
+
+export type InputFieldType={
+     width:number
+     padding:number
+     margin:number
+}
+
   
