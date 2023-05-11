@@ -1,5 +1,6 @@
-import { StyleContainerType, StyledButtonType, StyledTextFieldType } from "@/model";
+import { InputFieldType, RoundedButtonType, StyleContainerType, StyledButtonType, StyledTextFieldType } from "@/model";
 import { Box, Button, Container, Slider, SliderProps, TextField, alpha, styled} from "@mui/material";
+import { blue } from "@mui/material/colors";
 import {  useTheme } from '@mui/material/styles';
 import Link from "next/link";
 
@@ -125,4 +126,29 @@ export const StyledButtonSignUp = styled(Button)(({ theme }) => ({
     margin: theme.spacing(1),
     borderRadius: theme.shape.borderRadius,
   }));
+
+  export const InputField = styled('input')<InputFieldType>(({ width,padding,margin }) => ({
+
+    display:"block",
+    width: width,
+    padding:padding,
+    margin:margin,
+    input:{
+      '&::placeholder':{
+      color:blue[300],
+      fontStyle: 'italic',
+      }
+    }
+  
+
+  }));
+  export const MyButton= styled(Button)(({theme})=>({
+   
+  }))
+
+  export const RoundedButton=styled(MyButton)<RoundedButtonType>(({borderRadius})=>({
+      borderRadius:"20px",
+  }))
+
+
   
