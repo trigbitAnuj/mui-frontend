@@ -5,8 +5,10 @@ import { Container, Slider, Box, SliderProps } from "@mui/material/";
 import { Typography, CssBaseline } from "@mui/material";
 import React from "react";
 import {
+  InputField,
   MyStyledButton,
   MyThemeComponent,
+  RoundedButton,
   StyledBox,
   StyledBoxComponent,
   StyledButtonDemo,
@@ -60,6 +62,10 @@ const Styled: React.FC = () => {
       </StyledBoxComponent>
 
       <MyStyledButton myBackgroundColor="red">MyStyleButton</MyStyledButton>
+      <InputField width={400} padding={4} margin={4} placeholder="type here" />
+      <RoundedButton variant="outlined" color="error" borderRadius={30}>
+        Rounded Button
+      </RoundedButton>
     </>
   );
 };
