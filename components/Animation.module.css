@@ -1,0 +1,193 @@
+.container {
+  overflow: hidden;
+  padding: 3rem 0;
+}
+.heading {
+  animation: heading 5s ease-out 0.5s infinite normal forwards;
+}
+
+@keyframes heading {
+  from {
+    margin-right: 100%;
+    width: 100%;
+  }
+  to {
+    margin-left: 50%;
+    width: 100%;
+  }
+}
+
+.para {
+  animation-name: slidein;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 200%;
+  }
+  50% {
+    margin-top: 30%;
+    font-size: larger;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0px;
+  background-color: rebeccapurple;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+}
+.box:hover {
+  animation-name: rotate;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn {
+  margin: 1rem 0px;
+}
+.btn:hover {
+  animation-name: translate;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+@keyframes translate {
+  from {
+    transform: translateX(0);
+    transform: skew(10deg, 10deg);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+.parentBox {
+  margin: 1rem 0px;
+  background-color: yellowgreen;
+}
+.childBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 250px;
+  width: 250px;
+  background-color: aquamarine;
+  animation: animateBox 1s ease-in-out 0s 2 normal forwards;
+  position: relative;
+}
+
+@keyframes animateBox {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  30% {
+    top: 250px;
+    left: 0px;
+  }
+  75% {
+    top: 250px;
+    left: 250px;
+  }
+  100% {
+    top: 0px;
+    left: 250px;
+  }
+}
+
+.bounce {
+  margin-top: 20px;
+  animation-name: bounce;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  border-radius: 50%;
+  background-color: crimson;
+  border: 1px solid white;
+  height: 250px;
+  width: 250px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(30%, -30px);
+  }
+  50% {
+    transform: translate(60%, 30px);
+  }
+
+  100% {
+    transform: translate(90%, 0);
+  }
+}
+
+.opacity {
+  border-radius: 20px;
+  opacity: 0.5;
+}
+.opacity:hover {
+  animation-name: animationButton;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes animationButton {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    box-shadow: 5px 4px 7px 1px rgb(227, 120, 120);
+    opacity: 1;
+  }
+}
+.demo {
+  border-top: 100px solid #ccc;
+  height: 300px;
+}
+.demo:hover .growAndBig {
+  animation-name: grow;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+.demo:hover .grow {
+  animation-name: grow;
+  animation-duration: 3s;
+}
+
+@keyframes grow {
+  from {
+    font-size: 0;
+  }
+  to {
+    font-size: 40px;
+  }
+}
