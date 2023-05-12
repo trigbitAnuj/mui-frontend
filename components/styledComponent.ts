@@ -147,7 +147,7 @@ export const StyledButtonSignUp = styled(Button)(({ theme }) => ({
   }))
 
   export const RoundedButton=styled(MyButton)<RoundedButtonType>(({borderRadius})=>({
-      borderRadius:"20px",
+      borderRadius:`${borderRadius}px`,
   }))
 
 
