@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const Payment = () => {
+const Payment: React.FC = () => {
   const [isTrue, setIsTrue] = React.useState(true);
 
   const handleChange = () => {
