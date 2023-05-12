@@ -1,6 +1,6 @@
 import { Grid, TextField, Typography } from "@mui/material";
 
-const AddressForm = () => {
+const AddressForm: React.FC = () => {
   return (
     <>
       <Typography variant="h6" gutterBottom>
