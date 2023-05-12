@@ -39,5 +39,8 @@ export type InputFieldType={
      padding:number
      margin:number
 }
+export type RoundedButtonType={
+     borderRadius:number
+}
 
   
