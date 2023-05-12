@@ -1,6 +1,7 @@
 import AddressForm from "@/components/AddressForm";
 import Payment from "@/components/Payment";
 import Review from "@/components/Review";
+import { getStepContent } from "@/utils";
 import {
   Container,
   Paper,
@@ -11,24 +12,12 @@ import {
   Box,
   Button,
 } from "@mui/material";
+import { NextPage } from "next";
 import React from "react";
 
 const steps = ["Shipping address", "Payment details", "Review your order"];
 
-const getStepContent = (step: number) => {
-  switch (step) {
-    case 0:
-      return <AddressForm />;
-    case 1:
-      return <Payment />;
-    case 2:
-      return <Review />;
-    default:
-      throw new Error("Unknown step");
-  }
-};
-
-const Checkout = () => {
+const Checkout: NextPage = () => {
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {
