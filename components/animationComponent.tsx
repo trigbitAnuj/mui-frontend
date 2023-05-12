@@ -1,7 +1,25 @@
+import React from "react";
 import styles from "./Animation.module.css";
-import { Box, Button, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Typography,
+  Paper,
+  Card,
+  CardHeader,
+  TextField,
+} from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import { theme } from "@/theme";
 
 export const AnimationComponent = () => {
+  const [open, setOpen] = React.useState<boolean>(false);
+
+  const toggleSearchButton = () => {
+    console.log("toggle button");
+    setOpen((prev) => !prev);
+  };
   return (
     <>
       <Container className={styles.container}>
@@ -23,8 +41,10 @@ export const AnimationComponent = () => {
         <Box className={styles.parentBox}>
           <Box className={styles.childBox}>Child</Box>
         </Box>
+        <Box>
+          <Box className={styles.bounce}></Box>
+        </Box>
 
-        <Box className={styles.bounce}></Box>
         <Button className={styles.opacity} variant="contained" color="error">
           opacity
         </Button>
@@ -34,6 +54,77 @@ export const AnimationComponent = () => {
             This grow and stay big
           </Typography>
           <Typography className={styles.grow}>This just grow</Typography>
+        </Box>
+
+        <Box className={styles.element}>
+          <h1 className={styles.rotate}>i"ll rotate on hover</h1>
+        </Box>
+
+        <Button className={styles.stretch} variant="contained" color="success">
+          stretch
+        </Button>
+
+        <Card className={styles.shimmer_card} raised>
+          <Box
+            className={`${styles.shimmer_card_header} ${styles.stroke} ${styles.animate}`}
+          ></Box>
+          <Box
+            className={`${styles.shimmer_img} ${styles.stroke} ${styles.animate}`}
+          ></Box>
+          <Box
+            className={`${styles.shimmer_details} ${styles.stroke} ${styles.animate}`}
+          ></Box>
+        </Card>
+        <Box className={styles.ball_container}>
+          <Box className={`${styles.red_ball}   ${styles.red_ball_1}`}></Box>
+          <Box className={`${styles.blue_ball} ${styles.blue_ball_1}`}></Box>
+        </Box>
+
+        <Box className={styles.ball_container}>
+          <Box className={`${styles.red_ball}  ${styles.red_ball_2}`}></Box>
+          <Box className={`${styles.blue_ball}`}></Box>
+        </Box>
+        <Box className={styles.ball_container}>
+          <Box className={`${styles.red_ball}  ${styles.red_ball_3}`}></Box>
+          <Box className={`${styles.blue_ball}`}></Box>
+        </Box>
+        <Button
+          className={styles.pressme_button}
+          variant="contained"
+          color="info"
+        >
+          press me
+        </Button>
+
+        <Box className={styles.search_container}>
+          <Button onClick={toggleSearchButton}>
+            <SearchIcon
+              style={open ? { width: 0 } : { width: "24px", height: "24px" }}
+            />
+          </Button>
+          <Box
+            className={styles.input_container}
+            style={
+              open
+                ? {
+                    width: "inherit ",
+                    padding: "2px",
+                    border: "1px solid black",
+                  }
+                : { width: 0 }
+            }
+          >
+            <Button onClick={toggleSearchButton}>
+              <SearchIcon />
+            </Button>
+            <input
+              className={styles.slidebar}
+              id="searchbar"
+              name="searchbar"
+              type="text"
+              placeholder="Title,genres,Movies"
+            ></input>
+          </Box>
         </Box>
       </Container>
     </>
