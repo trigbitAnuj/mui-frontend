@@ -2,17 +2,9 @@ import React from "react"
 import AddressForm from "./components/AddressForm"
 import Payment from "./components/Payment"
 import Review from "./components/Review"
+import { ProductsType, TIERSTYPE } from "./model";
 
-type TIERS={
-    title: string
-    price: string
-    subheader?:string
-    description:string []
-    buttonText: string
-    buttonVariant: string
-}
 
-interface TIERSTYPE extends Array<TIERS>{}
 
 
 
@@ -55,6 +47,30 @@ export const tiers:TIERSTYPE = [
       buttonText: "Contact us",
       buttonVariant: "outlined",
     },
+  ];
+
+  export const products: ProductsType = [
+    {
+      name: "Product 1",
+      desc: "A nice thing",
+      price: "$9.99",
+    },
+    {
+      name: "Product 2",
+      desc: "Another thing",
+      price: "$3.45",
+    },
+    {
+      name: "Product 3",
+      desc: "Something else",
+      price: "$6.51",
+    },
+    {
+      name: "Product 4",
+      desc: "Best thing of all",
+      price: "$14.11",
+    },
+    { name: "Shipping", desc: "", price: "Free" },
   ];
 
 
