@@ -1,6 +1,7 @@
 .container {
   overflow: hidden;
-  padding: 3rem 0;
+  padding: 3rem 2rem;
+  margin-left: 2rem;
 }
 .heading {
   animation: heading 5s ease-out 0.5s infinite normal forwards;
@@ -139,19 +140,51 @@
     transform: translate(0);
   }
 
-  25% {
-    transform: translate(30%, -30px);
+  10% {
+    background-color: #f44336;
+    transform: translate(40px, -30px);
   }
-  50% {
-    transform: translate(60%, 30px);
+  20% {
+    background-color: #e91e63;
+    transform: translate(80px, 30px);
   }
 
+  30% {
+    background-color: #9c27b0;
+    transform: translate(120px, -30px);
+  }
+  40% {
+    background-color: #673ab7;
+    transform: translate(160px, 30px);
+  }
+  50% {
+    background-color: #673ab7;
+    transform: translate(200px, -30px);
+  }
+  60% {
+    background-color: #2196f3;
+    transform: translate(240px, 30px);
+  }
+  70% {
+    background-color: #03a9f4;
+    transform: translate(280px, -20px);
+  }
+  80% {
+    background-color: #00bcd4;
+    transform: translate(320px, 30px);
+  }
+  90% {
+    background-color: #009688;
+    transform: translate(360px, -30px);
+  }
   100% {
-    transform: translate(90%, 0);
+    background-color: #9e9e9e;
+    transform: translate(400px, 30px);
   }
 }
 
 .opacity {
+  margin-bottom: 8px;
   border-radius: 20px;
   opacity: 0.5;
 }
@@ -170,8 +203,9 @@
   }
 }
 .demo {
-  border-top: 100px solid #ccc;
-  height: 300px;
+  height: 200px;
+  border: 1px solid black;
+  margin: 16px;
 }
 .demo:hover .growAndBig {
   animation-name: grow;
@@ -190,4 +224,272 @@
   to {
     font-size: 40px;
   }
+}
+
+.element {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(161, 49, 49);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; */
+}
+.element:hover {
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgb(161, 49, 49);
+  }
+  50% {
+    background-color: rgb(50, 150, 50);
+  }
+  100% {
+    background-color: rgb(52, 52, 154);
+  }
+}
+.element:hover .rotate {
+  animation-name: rotate1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+@keyframes rotate1 {
+  from {
+    transform: rotate(0);
+    transform-origin: center;
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stretch:hover {
+  animation-name: stretch;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  /* animation-delay: 0.7s; */
+}
+@keyframes stretch {
+  0% {
+    transform: scale(0.5);
+    background-color: #2e7d32;
+  }
+  50% {
+    transform: scale(1);
+    background-color: coral;
+  }
+  100% {
+    background-color: rgb(185, 134, 38);
+    transform: scale(1.2);
+  }
+}
+
+.shimmer_card {
+  width: 220px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.shimmer_card_header {
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+.stroke {
+  height: 20px;
+  background-color: #ccc;
+}
+.shimmer_img {
+  width: 200px;
+  height: 130px;
+}
+.shimmer_details {
+  width: 80%;
+  margin-top: 10px;
+}
+
+.animate {
+  animation-name: shimmer;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  /* animation-fill-mode: forwards; */
+  /* animation-direction: normal; */
+  animation-timing-function: ease-in-out;
+  background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+  background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -1000px;
+  }
+  to {
+    background-position: 1000px;
+  }
+}
+
+.ball_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red_ball {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(135, 52, 52);
+  border-radius: 50%;
+}
+.blue_ball {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(34, 34, 132);
+  border-radius: 50%;
+}
+
+.red_ball_1 {
+  animation-name: redball_1;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+.blue_ball_1 {
+  animation-name: blueball_1;
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+@keyframes redball_1 {
+  from {
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes blueball_1 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1000px);
+  }
+}
+
+.red_ball_2 {
+  animation-name: redball_2;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+@keyframes redball_2 {
+  0% {
+    transform: translateX(-1000px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
+.red_ball_3 {
+  animation-name: redball_3;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+@keyframes redball_3 {
+  from {
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.pressme_button {
+  box-shadow: 5px 4px 10px 2px rgb(106, 156, 231);
+}
+
+.pressme_button:hover {
+  animation-name: move;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+
+.search_container {
+  margin-top: 10px;
+  overflow: hidden;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 2;
+}
+
+.input_container {
+  transition: transform;
+  transition-duration: 2s;
+  display: flex;
+  align-items: center;
+  gap: 2;
+  animation-direction: normal;
+  animation-timing-function: ease-in;
+  animation-duration: 5s;
+}
+
+.input_styles {
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-direction: normal;
+}
+
+@keyframes slidein {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.slidebar {
+  width: 100%;
+
+  padding: 10px;
+  outline: none;
+  border: none;
 }
