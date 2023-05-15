@@ -1,4 +1,5 @@
 import * as React from "react";
+import styles from "./Animation.module.css";
 import { styled, alpha } from "@mui/material/styles";
 import {
   AppBar,
@@ -72,11 +73,17 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 // }));
 
 const Navbar: React.FC = () => {
+  const [open, setOpen] = React.useState<boolean>(false);
+
   const theme = useTheme();
   const router = useRouter();
 
   const handleSignup = () => {
     router.push("/register");
+  };
+  const toggleSearchButton = () => {
+    console.log("toggle button");
+    setOpen((prev) => !prev);
   };
 
   return (
@@ -100,16 +107,42 @@ const Navbar: React.FC = () => {
           >
             MUI
           </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            {/* <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            /> */}
-          </Search>
-          <Box sx={{ flexGrow: 1 }} />
+          {/* <Search> */}
+          {/* <SearchIconWrapper> */}
+          {/* <SearchIcon /> */}
+
+          <Box sx={{ flexGrow: 1 }} className={styles.search_container}>
+            <Button color="custom" onClick={toggleSearchButton}>
+              <SearchIcon
+                style={open ? { width: 0 } : { width: "24px", height: "24px" }}
+              />
+            </Button>
+            <Box
+              className={` ${
+                open ? styles.input_styles : styles.input_container
+              }`}
+              style={
+                open
+                  ? {
+                      display: "flex",
+                      width: "inherit",
+                    }
+                  : { width: 0 }
+              }
+            >
+              <Button color="error" onClick={toggleSearchButton}>
+                <SearchIcon />
+              </Button>
+              <input
+                className={styles.slidebar}
+                id="searchbar"
+                name="searchbar"
+                type="text"
+                placeholder="Title,genres,Movies"
+              ></input>
+            </Box>
+          </Box>
+          {/* <Box sx={{ flexGrow: 1 }} /> */}
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
