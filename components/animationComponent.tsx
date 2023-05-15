@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Animation.module.css";
+import styles from "@/styles/animation.module.css";
 import {
   Box,
   Button,
@@ -93,7 +93,7 @@ export const AnimationComponent = () => {
           variant="contained"
           color="info"
         >
-          press me
+          Submit
         </Button>
 
         <Box className={styles.search_container}>
@@ -103,13 +103,12 @@ export const AnimationComponent = () => {
             />
           </Button>
           <Box
-            className={styles.input_container}
+            className={`${open ? styles.input_styles : styles.input_container}`}
             style={
               open
                 ? {
                     width: "inherit ",
-                    padding: "2px",
-                    border: "1px solid black",
+                    display: "flex",
                   }
                 : { width: 0 }
             }
